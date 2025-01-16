@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="{% static 'calculadora_imc/styles.css' %}">
+</head>
+
+<body>
+    <!-- adicionar espacamento entre IMC e ___ usando caractere de scape do html -->
+    <h1 class="grey">IMC ______________________</h1>
+    <h2 class="blue">Cálculo IMC</h2>
+
+    <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde
+        para calcular o peso ideal de cada pessoa.
+    </p>
+    <p>
+        O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao
+        quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.
+    </p>
+    <p>
+        Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare com os índices da
+        tabela. Importante: siga os exemplos e use pontos como separadores.
+    </p>
+
+    <div>
+        <form action=" " method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="blue" for="altura">Altura (ex.: 1,70):</label>
+                    <input type="text" id="altura" name="altura" placeholder="Metros">
+                    <button class="bgblue" type="submit">Calcular</button>
+                </div>
+                <div class="form-group">
+                    <label class="blue" for="peso">Peso (ex.: 69.2):</label>
+                    <input type="text" id="peso" name="peso" placeholder="Quilos">
+                    <button class="bgorange" type="reset">Limpar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="imc-table">
+        <!-- # linha 1 - cabeçalho da tabela "VEJA A INTERPRETAÇÃO DO IMC" -->
+        <tr>
+            <th colspan="3">VEJA A INTERPRETAÇÃO DO IMC</th>
+        </tr>
+        <!-- # coluna 1 - "IMC" , coluna 2 - "CLASSIFICAÇÃO" , coluna 3 - "OBESIDADE (GRAU)" -->
+        <tr>
+            <th>IMC</th>
+            <th>CLASSIFICAÇÃO</th>
+            <th>OBESIDADE (GRAU)</th>
+        </tr>
+        <!-- # linha 2 - "Abaixo de 18,5" , "Magreza" , "0" -->
+        <tr>
+            <td>MENOR QUE 18,5</td>
+            <td>MAGREZA</td>
+            <td>0</td>
+        </tr>
+        <!-- # linha 3 - "Entre 18,5 e 24,9" , "Normal" , "0" -->
+        <tr>
+            <td>ENTRE 18,5 E 24,9</td>
+            <td>NORMAL</td>
+            <td>0</td>
+        </tr>
+        <!-- # linha 4 - "Entre 25,0 e 29,9" , "Sobrepeso" , "I" -->
+        <tr>
+            <td>ENTRE 25,0 E 29,9</td>
+            <td>SOBREPESO</td>
+            <td>I</td>
+        </tr>
+        <!-- # linha 5 - "Entre 30,0 e 39,9" , "Obesidade" , "II" -->
+        <tr>
+            <td>ENTRE 30,0 E 39,9</td>
+            <td>OBESIDADE</td>
+            <td>II</td>
+        </tr>
+        <!-- linha 6 - "Maior que 40,0" , "Obesidade Grave" , "III" -->
+        <tr>
+            <td>MAIOR QUE 40,0</td>
+            <td>OBESIDADE GRAVE</td>
+            <td>III</td>
+        </tr>
+    </table>
+     
+    <!-- # SEU IMC -->
+    <div class="bgorange result">
+        {% if imc %}
+        <h3>Seu IMC é: {{ imc }}</h3>
+        <h3>Classificação: {{ classificacao }}</h3>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

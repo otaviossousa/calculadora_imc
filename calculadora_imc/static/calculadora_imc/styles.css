@@ -1,0 +1,98 @@
+.grey {
+    color: grey;
+    font-weight: bold;
+}
+
+.blue {
+    color: #1f5eaf;
+    font-weight: bold;
+}
+
+.result {
+    color: white;
+    border-radius: 20px;
+    padding: 1px;
+    width: 20%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #1f5eaf;
+    margin-bottom: 10px;
+    color: grey;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bgblue {
+    background-color: #1f5eaf;
+}
+
+.bgorange {
+    background-color: #ff5203;
+}
+
+.imc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.imc-table th, .imc-table td {
+    padding: 12px 15px;
+    border: none;
+}
+
+.imc-table th {
+    color: #1f5eaf;
+}
+
+.imc-table tr:nth-child(2) th {
+    color: #1f5eaf; 
+}
+
+.imc-table th[colspan="3"] {
+    background-color: #1f5eaf; 
+    color: white;
+    border-radius: 15px;
+}
