@@ -12,25 +12,21 @@ Este projeto é uma aplicação Django para calcular o Índice de Massa Corporal
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/calculadora_imc.git
+    git clone https://github.com/otaviossousa/calculadora_imc.git
     ```
 2. Navegue até o diretório do projeto:
     ```bash
     cd calculadora_imc
     ```
-3. Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Execute as migrações do banco de dados:
+3. Execute as migrações do banco de dados:
     ```bash
     python manage.py migrate
     ```
-5. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
     ```bash
     python manage.py runserver
     ```
-6. Acesse a aplicação no navegador:
+5. Acesse a aplicação no navegador:
     ```
     http://127.0.0.1:8000
     ```
